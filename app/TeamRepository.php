@@ -32,7 +32,9 @@ class TeamRepository
       
        /*** Added this to add 1 to Top level Manager with ID=0 to get its details ***/
         for($i = 0 ; $i<count($teamManagerId) ; $i++)
-            $teamManagerUpdatedId[] = ($teamManagerId[$i] == 0 ) ? $teamManagerId[$i]+1 :$teamManagerId[$i];
+            {
+                $teamManagerUpdatedId[] = ($teamManagerId[$i] == 0 ) ? $teamManagerId[$i]+1 :$teamManagerId[$i];
+            }
             $teamManagerDetails=Employee::whereIn('id',$teamManagerUpdatedId)->orderBy('id','asc')->get();
         return $teamManagerDetails;
     }
