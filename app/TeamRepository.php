@@ -28,7 +28,7 @@ class TeamRepository
 
     public function getManager( )
     {
-            $teamManagerId = Employee::with('parentRecursive')->whereNull('parent_id')->orderBy('manager_user_id','asc')->pluck('manager_user_id');
+        $teamManagerId = Employee::with('parentRecursive')->whereNull('parent_id')->orderBy('manager_user_id','asc')->pluck('manager_user_id');
       
        /*** Added this to add 1 to Top level Manager with ID=0 to get its details ***/
         for($i = 0 ; $i<count($teamManagerId) ; $i++)
