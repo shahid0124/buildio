@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class showHierarchyController extends Controller
 {
     public function showHierarchy(){
-	
+    	
 	$teamRepositoryObject= new TeamRepository;
 	$teamManager = $teamRepositoryObject->getManager();
 	$teamManagerDetails = array($teamManager);
