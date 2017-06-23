@@ -15,17 +15,9 @@ class showHierarchyController extends Controller
 	$teamManagerDetails = array($teamManager);
 	foreach($teamManager as $teamManager)
 		{
-			
-			// $manager_Id = ($teamManager->manager_user_id == 0 ) ? $teamManager->manager_user_id :$teamManager->manager_user_id;
-			
-			// print($manager_Id);
-			// if($teamManager->id == 0 || )
-
 			$employeeCount = $teamRepositoryObject->getTeam($teamManager->id);
-
 			$totalCount[] = count($employeeCount);
 		}
-		// print(count($totalCount));
 	return view('showhierarchy.index', compact('totalCount','teamManagerDetails'));
     }
 }
